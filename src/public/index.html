@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('#light').on('click', function () {
+                $.post('/led/toggle', function (err) {
+                    console.log('POST = ' + err);
+                }).fail(function (err) {
+                    alert("error" + err);
+                });
+                console.log('light toggle button clicked');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button id="light">LIGHT</button>
+</body>
+
+</html>
